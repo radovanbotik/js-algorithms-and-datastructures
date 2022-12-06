@@ -1,0 +1,76 @@
+                                Timing code
+
+Example:
+Suppose we want to write a function that calculates the sum of all numbers 
+from 1 up to (and including n) 
+console.log(addupto(6));
+[1,2,3,4,5,6] = 21
+
+
+const addupto = n => {
+  let total = 0;
+  for (i = 1; i <= n; i++) {
+    total = total + i;
+    console.log(total);
+  }
+  return total;
+};
+
+
+const addupto2 = n => {
+  return (n * (n + 1)) / 2;
+};
+console.log(addupto2(6));
+
+1.  Which is better?
+    1.1 Which is faster?
+    1.2 Which is less memory intesive?
+    1.3 Which is more readable?
+
+2.  Timing
+    2.1 Manual approach:
+
+    let t1 = performance.now();
+    addupto2(1000000000);
+    let t2 = performance.now();
+    console.log(`time elapsed:${(t2 - t1) / 1000} seconds`);
+
+    ### addupto2 is significantly shorter.
+
+    2.2 The Problem with Time:
+    #   different machines will record different times
+    #   the same machine will record different times
+    #   fast algorithms speed measurements may not be precise enough
+        because they are too fast
+
+    2.3 Better approach might be to count the simple operations the computer
+        has to perform
+        
+        Ex.2
+        const addupto2 = n => {
+        return (n * (n + 1)) / 2;
+        };
+
+        1.  first we run multiplication *
+        2.  second we run addition +
+        3.  third we run divison /
+        #   Three simple operations regardless of the size of n
+
+        Ex.1
+        const addupto = n => {
+        let total = 0;
+        for (i = 1; i <= n; i++) {
+        total = total + i}
+        return total};
+
+        1.  we run addition (n) number of times because of the loop
+            so if n is 5 we run addition 5 times
+        2.  assingment is also an operation so we run it (n) times aswell
+        3.  i++ is also addition and assingment and run (n) times
+        4.  total = 0, let i = 1, and i<=n are also assingments
+            
+            operations count:
+            the number can be as low as 2n or as high as 5n + 2
+            
+            Regardless of the exact number what matter is that the number
+            of operations grows roughly proportionally with n

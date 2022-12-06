@@ -1,0 +1,65 @@
+                                Big O Notation
+
+1.  It is a way of talking, comparing pieces of code and its performance
+    based on space and time complexities
+
+2.  It tries to answer the question which solution is the best
+
+3.  It provides numeric evaluation for performance of code
+
+4.  It helps us  to identify inefficient code in our applications.
+
+5.  It allows us to talk formally about how the runtime of and algorithm
+    grows as the input grow.
+
+6.  We dont care as much about details as for TRENDS.
+
+    Algorithm is Big O of Fn if:
+
+    Algorithm is O(f(n)) if the number of simple operations computer has to do
+    is eventually less than a constant times f(n) as n increases
+
+    f(n) could be linear (f(n) = n)
+        #as n scales in the input the runtime scales aswell
+    f(n) could be quadratic (f(n) = n*n)
+        #as n grows the runtime squares
+    f(n) could be constant (f(n) = 1)
+        #as n grows it doesnt have impact on runtime, because its constant
+    f(n) could be something entirely different
+    function with input of n and = output of n
+
+    When we talk about BigO we talk about the worst case scenario.
+    We talk about upperbound for runtime
+
+-------------------------------------------------------------------------------
+
+const addupto2 = n => {
+  return (n * (n + 1)) / 2;
+};
+
+#this has Big O of 1, O(1) because we always run constant time of 3 operations 
+
+--------------------------------------------------------------------------------
+const addupto = n => {
+  let total = 0;
+  for (i = 1; i <= n; i++) {
+    total = total + i;
+  }
+  return total;
+};
+
+#this has Big O of n, O(n) because the number of operations is bounded by the n
+ we repeat same operations for each input, so (n) times
+
+------------------------------------------------------------------------------
+ function func(n){
+    for(let i = 0;i<n;i++){
+        for(let j = 0; j< n;j++){
+            console.log(i,j)
+        }
+    }
+ }
+
+ #this has Big O(n*n) (quadratic) because the first loop increase runtime (n) times
+  and nested time also increases runtime by (n) times however its nested
+  so is O(n) operation inside of an O(n) operation.
