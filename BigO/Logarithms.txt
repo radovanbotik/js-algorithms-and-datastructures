@@ -1,0 +1,22 @@
+                                        Recap
+
+1. logarithm is the inverse of exponential 
+    # opposite of growing
+    logarithm and exponential func is a pair just like
+    multiplication and division
+
+    log₂(8) = 3            -------> 2³ = 8
+    log₂(value) = exponent -------> 2exponent = value
+
+    we can omit log₂ so we will say just log
+
+2. The logarithm of a number roughly measures the number of times
+    you can divide that number by 2 before you get value that is
+    less than or equal to one.
+
+    8 / 2 = 4 // still bigger than 1
+    4 / 2 = 2 // still bigger than 1
+    2 / 2 = 1 // it is 1, we divided the base by 2 three times so log is 3 
+
+3. O(log n) is good compared to O(n) or O(nlog n)
+
