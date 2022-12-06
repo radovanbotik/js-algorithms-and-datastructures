@@ -1,0 +1,67 @@
+                    Performance Of Objects and Arrays
+
+#Objects:
+    When to use:
+
+    1.  Order doesnt matter
+    2.  When you need fast access, insertion and removal
+
+        #Big O of Objects:
+
+        Insertion   -   O(1)
+        Removal     -   O(1)
+        Access      -   O(1)
+        Searching   -   O(n)
+
+        #insertion is fast since theres no begining nor end, so it doesnt matter
+        where you inject/insert, there are no repercussion you just add key
+
+        #searching is linear because we have to search every single key value pair
+
+        BIG O of Object Methods:
+
+        Object.keys     -   O(n)
+        Object.values   -   O(n)
+        Object.entries  -   O(n)
+        hasOwnProperty  -   O(1)   
+
+        #keys,values,entries =  we perform them for each entry so number of operations grow
+                                grow with size of obj
+
+#Arrays:
+    When to use:
+
+    1.We need order, however it might have an impact on performance
+
+        #Big O of Arrays:
+
+        Insertion   -   dependable
+        Removal     -   dependable
+        Searching   -   O(n)
+        Access      -   O(1)
+
+        Insertion At The End    -   O(1)
+        
+        Insertion At the Start  -   O(n)
+        #we have to re-index all the indices in the Arrays
+        
+        Removing At The End   -   O(1)
+
+        Removing At The Start   -   O(n)
+        #we have to re-index all the indices in the Arrays
+
+        
+        #Big O of Array Methods:
+        push    -   O(1)    End
+        pop     -   O(1)    End
+        shift   -   O(n)    Start
+        unshift -   O(n)    Start
+        concat  -   O(n)
+        slice   -   O(n)
+        splice  -   O(n)
+        sort    -   O(n*log n)
+        HOCs:   -   O(n)
+        forEach
+        map
+        filter
+        reduce

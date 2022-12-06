@@ -1,4 +1,4 @@
-                                        Recap
+                                    Recap
 
 1. logarithm is the inverse of exponential 
     # opposite of growing
