@@ -1,0 +1,30 @@
+                             Simplifying Big O
+
+1.  Constants dont matter:
+    O(2n)   => we dont say O(2n) but just O(n)
+             so its not increasing 2times per n but simply just n times
+    O(500)  => we dont say runtime is 500 operations but just O(1)
+             because it is constant
+    O(13n²)) => we say just O(n²) (big O of n squared)
+
+    1.O(n)
+    2.O(1)
+    3.O(n²)
+
+2.  Smaller terms dont matter:
+    O(n+10) => O(n)
+    O(1000n + 50) => O(n)
+    O(n² +5n + 8) => O(n²)
+
+
+#   Big O Shorthands:
+    1.Arithemetic operations are constant
+    
+    2.Variable assignment is constant
+    
+    3.Accessing elements in an array (by index)
+    or object (by key) is constant
+    
+    4.In a loop the complexity is the length
+    of the loop, times the complexity of whatever happens inside of the loop.
+    (as list grows n grows = n ) (if theres is nested loop inside loop we get n²)

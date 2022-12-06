@@ -21,7 +21,7 @@
 
     f(n) could be linear (f(n) = n)
         #as n scales in the input the runtime scales aswell
-    f(n) could be quadratic (f(n) = n*n)
+    f(n) could be quadratic (f(n) = n²)
         #as n grows the runtime squares
     f(n) could be constant (f(n) = 1)
         #as n grows it doesnt have impact on runtime, because its constant
@@ -60,6 +60,6 @@ const addupto = n => {
     }
  }
 
- #this has Big O(n*n) (quadratic) because the first loop increase runtime (n) times
+ #this has Big O(n²) (quadratic) because the first loop increase runtime (n) times
   and nested time also increases runtime by (n) times however its nested
   so is O(n) operation inside of an O(n) operation.
