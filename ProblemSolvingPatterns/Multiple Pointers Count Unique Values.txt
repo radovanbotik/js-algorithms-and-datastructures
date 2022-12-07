@@ -1,0 +1,35 @@
+                            Multiple Pointers Count Unique Values
+
+1.  Implement a function called countUniqueValues, which accepts a SORTED array,
+    and counts the unique values in the array. There can be negative numbers
+    in the array, but it will always be sorted.
+
+1.  Set solution: 
+
+    function countUniqueValues(arr) {
+    return [...new Set(arr)].length;
+    }  
+
+2.  Multiple Pointers solution:
+
+    1.  Only j is looping, the value of i is increased whenever we dont find a match
+        arr[i] will also replace current value of index with whatever value is
+        currenty stored in current iteration of arr[j].
+    2.  If we encounter a match we take no action and let j move to next iteration 
+    3.  j will be the last number in the array so we need to account for it
+        thats why we need to return i + 1
+
+function countUniqueValues(arr) {
+  if (arr.length === 0) return 0;
+  let i = 0;
+  let j = 1;
+
+  for (j; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+  return i + 1;
+}
+console.log(countUniqueValues([-2, -1, -1, 0, 1]));

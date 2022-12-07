@@ -4,3 +4,74 @@
     and move towards the beginning,end or middle based on a certain condition.
 
 2.  Very efficient for solving problems with minimal space complexity aswell.
+
+3.  We have a linear structure like an array or string and we are searching for 
+    pair of values or for something that meets a ceratin condition.
+    We use two references and we move in certain way.
+    [a,b,c,d,1,2,3,4,6]
+    ⬆️=>          <=⬆️
+    and move towards middle
+    or
+    [a,b,c,d,1,2,3,4,6]
+    ⬆️⬆️=>           
+    and mvoe towards end
+
+#Ex:
+
+1.  Write a function called sumZero which accepts a SORTED array of integers.
+    The function should find the FIRST pair where the sum is 0.
+    Retuns an array that includes both values that sum to 0
+    or return undefined if a pair does not exist.
+
+    sumZero([-3,-2,-1,0,1,2,3]) //[-3,3]
+    sumZero([-2,0,1,3]) undefined
+    sumZero([1,2,3]) undefined
+
+#   Naive Solution:
+#   Time complexity O(n²) Space Complexity O(1)
+
+function sumZero(arr){
+    for(let i = 0; i < arr.length; i++){
+        for(let j = i+1; j < arr.length; j++){
+            if(arr[i] + arr[j] === 0){
+                return [arr[i], arr[j]];
+            }
+        }
+    }
+}
+
+
+sumZero([-4,-3,-2,-1,0,1,2,5])
+
+#   Refactor to Multiple Pointer Pattern:
+#   Time complexity O(n) Space Complexity O(1)
+
+1.  We create 2 variables:
+    1.1 A avriable for the first entry of the array 
+    1.2 A variable for the last entry of the array
+
+2.  We define the loop
+    (if the value saved in starting point is smaller than value of the end point)
+    2.1 We add values of starting point and ending point together and sstore the value in var
+    2.2 We check if the addition of the two is equal to zero:
+        2.3 If it is, we return array,pair of indexes[arr[start],arr[end]]
+        2.2 If addition is bigger than zero then we decrease the ending point by one
+            so end--
+        2.2 Otherwise it must be smaller than zero and in that case we increase the starting
+        point start++
+        2.3 if theres no match then we will get to zero and 0-0 = 0;
+function sumZero1(arr) {
+  let start = 0;
+  let end = arr.length - 1;
+  while (start < end) {
+    let sum = arr[start] + arr[end];
+    if (sum === 0) {
+      return [arr[start], arr[end]];
+    } else if (sum > 0) {
+      end++;
+    } else {
+      start++;
+    }
+  }
+}
+console.log(sumZero([-4, -3, -2, -1, 0, 1, 2, 5]));
