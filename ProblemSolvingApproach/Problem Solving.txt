@@ -1,0 +1,9 @@
+                            Problem Solving:
+can be split into 5 #categories:
+
+1.  Understand The Problem
+2.  Concrete Examples
+3.  Break It Down
+4.  Solve Or Simplify
+5.  Look back and Refactor
+6.  Recap and Interview Strategies

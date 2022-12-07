@@ -1,0 +1,39 @@
+                          Understand The Problem:
+
+1.  Can you restate the problem in your own words?
+
+2.  What are the inputs that go into the problem
+
+3.  What are the outputs that should come from the solution
+
+4.  Can be outputs be determined from the inputs?
+    In other words do I have enough information to solve the problem?
+
+5.  How should I label the important pieces od fata that are a part of the problem?
+
+
+#Ex:
+#Write a function which takes two numbers and returns their sum:
+
+1.  Can you restate the problem in your own words?
+
+#   Implement additiom
+
+2.  What are the inputs that go into the problem
+
+#   It should be numbers, but how big number is? wouldnt it be better to use
+#   string instead? Our function accepts just 2 numbers but could we pass in more?
+#   If is it a number should it be decimal or integer?
+
+3.  What are the outputs that should come from the solution
+
+#   Should it be int? float? string?
+
+4.  Can be outputs be determined from the inputs?
+    In other words do I have enough information to solve the problem?
+
+#   What happens if I receive only 1 input? should i return undefined, null or set
+#   set default value?
+
+5.  How should I label the important pieces od fata that are a part of the problem?
+#   What terminology should I use?

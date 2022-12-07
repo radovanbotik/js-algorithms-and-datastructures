@@ -1,0 +1,52 @@
+                        Break it down:
+
+1.  Takes the steps to the problem and write them down.
+    This forces you to think about the code before you write it.
+    It also helps to catch any lingering issues or misunderstandings
+
+#Ex:
+
+Write a function which takes in a string
+and returns counts of each character in the string.
+
+(say it loud)
+Steps:
+
+1.  We create a skeleton to our function
+    function charCount(){}
+
+2.  We know it accepts a string 
+    function charCount(string){}
+
+  
+3.  function charCount(string){
+    //do something
+    }
+
+4.  Our interviewer decided we dont need to differentiate between
+    uppercase and lowercase and we should include numbers
+
+5.  
+    #Make object to return at end
+    #We need to take an action for each character in our string, loop through it.
+    #Return object at end
+
+    #We have object lets loop:
+    
+    1.Lets take the first char as example: we should lowercase it
+        1.1 we lowercase each char
+        1.2 we lowercase whole string at begining
+
+    2.Lets have a look at our object:
+        2.1  if it contains char we should increase the count by 1
+        2.2  if it doesnt contain the char we should simply add it
+             and set its count to 1
+    
+     function charCount(string){
+        //make object to return at end
+        //loop over string
+            //if the char is number/letter AND a key in obj add 1 to the count
+            //if the char is number/letter AND not a key add it and set the count
+            //if the char is something else dont do anything
+        //return object
+    }

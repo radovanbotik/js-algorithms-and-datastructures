@@ -1,0 +1,21 @@
+                            Solve or Simplify
+
+1.  Solve the problem if you can or if you cant solve a SIMPLER problem
+
+#Simplify:
+    1.  Find the core difficulty in what you are trying to do
+    2.  Temporarily ignore that difficulty
+    3.  Write a simplified solution
+    4.  Then incorporate that difficulty back in
+
+#Ex:
+
+    function charCount(string){
+        //make object to return at end
+        //loop over string
+            //if the char is number/letter AND a key in obj add 1 to the count
+            //if the char is number/letter AND not a key add it and set the count
+            //if the char is something else dont do anything
+        //return object
+    }
+

@@ -1,0 +1,44 @@
+                                Look Back And Refactor
+
+#Refactoring questions:
+    
+    1.Can you check the result?
+    2.Can you derive the result differently?
+    3.Can you understand it at a glance?
+    4.Can you use the result or method for some other problem?
+    5.Can you improve the performance of your solution?
+    6.Can you think of other ways to refactor?
+    7.How have other people solved this problem?
+
+1.Improving our charCount Example:
+    1.1 we could use for of instead of simple for loop
+    1.2 we could simplify if logic
+    1.3 we could swap regex since it might not be that performant
+        we could use separate function that checks for charcodes
+
+const isAlphaNumeric = character => {
+  const code = character.charCodeAt(0);
+  if (
+    !(code > 47 && code < 58) && // numeric 0-9
+    !(code > 64 && code < 91) && // upper alpha A-Z
+    !(code > 96 && code < 123) // lower alpha a-z
+  ) {
+    return false;
+  }
+  return true;
+};
+
+const charCount3 = string => {
+  const result = {};
+  //swapping for loop with for of loop
+  for (character of string) {
+    character = character.toLowerCase();
+    if (isAlphaNumeric(character)) {
+      //if its truthy increase by 1 otherwise set to 1
+      result[character] = ++result[character] || 1;
+    }
+  }
+  return result;
+};
+
+console.log(charCount3("hello!"));
