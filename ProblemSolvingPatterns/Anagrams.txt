@@ -1,0 +1,7 @@
+                                Anagrams
+
+1.  Given two strings, write a function to determine if the second string is anagram
+    of the first. An anagram is a word,phrase, or name formed by rearranding the
+    letters of another, such as cinema formed from iceman.
+
+2. all lowercase,no spaces, no special signs
