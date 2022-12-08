@@ -74,5 +74,5 @@ console.log(maxSubarraySum([2, 6, 9, 2, 1, 8, 5, 6, 3], 3));
 2.  Second iteration
     - arr[i-num] + arr[i]
     - arr[1] + arr[4]
-    we are deducting the second number and adding the fifth
+    we are deducting the second number and adding the fifth number
 */
