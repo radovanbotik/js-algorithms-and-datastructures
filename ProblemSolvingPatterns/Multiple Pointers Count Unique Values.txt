@@ -11,13 +11,14 @@
     }  
 
 2.  Multiple Pointers solution:
-
+    
+    #   if array is empty array return 0
     1.  Only j is looping, the value of i is increased whenever we dont find a match
         arr[i] will also replace current value of index with whatever value is
         currenty stored in current iteration of arr[j].
     2.  If we encounter a match we take no action and let j move to next iteration 
-    3.  j will be the last number in the array so we need to account for it
-        thats why we need to return i + 1
+    3.  j will be the last number in the array 
+    4.  i is at index of 3 however that means the length of array is 4 
 
 function countUniqueValues(arr) {
   if (arr.length === 0) return 0;

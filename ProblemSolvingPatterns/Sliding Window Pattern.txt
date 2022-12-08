@@ -1,0 +1,104 @@
+                            Sliding Window Pattern
+
+#   It is handy when we have string or array and we are searching for a subset
+    of that data that is continuous in some way.
+
+1.  This pattern involves creating a window which can either be an array
+    or number and we slide it from one position to another.
+
+2.  Depending on a certain condition the window either increases or closes
+    (and a new window is created)
+
+3.  Very useful for keeping track of a subset of data in an array/string..
+
+#Ex:
+Write a function to find the longest sequence of unique chracters
+'hellothere'
+1.hel 
+2.lother
+
+-------------------------------------------------------------------------------
+
+#Ex:
+Write a function called maxSubarraySum which accepts an array of integers
+and a number called n. The function should calculate the maximum sum of n
+consecutive elements in the array.
+
+--------------------------------------------------------------------------------
+1.  We are trying to find the max sum of n consecutive numbers
+
+#Naive solution:
+
+#   Time Complexity - O(n²)
+
+function maxSubarraySum(arr, num) {
+  if ( num > arr.length){
+    return null;
+  }
+  var max = -Infinity;
+  for (let i = 0; i < arr.length - num + 1; i ++){
+    temp = 0;
+    for (let j = 0; j < num; j++){
+      temp += arr[i + j];
+    }
+    if (temp > max) {s
+      max = temp;
+    }
+  }
+  return max;
+}
+
+maxSubarraySum([2,6,9,2,1,8,5,6,3],3)
+
+1.  It is inefficient because we depend on substring that is always moving just
+    by 1 spot
+    269,692,921 etc...
+
+-----------------------------------------------------------------------------------------
+
+#Refactored:
+
+# Time Complexity - O(n)
+
+1.  We create function that accepts 2 values: an array and a number
+    1.1 Edge case: if arrays length is smaller than n, it means array is empty 
+        and we return null
+
+2.  We create 2 variables maxSum and tempSum
+
+3.  The very first loop gives us sum of the first n numbers (in this case 3),
+    and stores it inside maxSum Variable
+
+4.  We set value of tempSum equal to maxSum
+
+5.  In the second loop we iterate through the array but initial value for our iterator is set to
+    the value of N! so we always pick values from where first loop stopped
+    let i = n 
+    5.1 We change value of tempSum in each iteration 
+    tempSum = 17(tempSum) - 2(arr[i - num](3-3 = 0 = arr[0] = 2)) + 2(arr[i]=arr[3]=2)
+    tempSum = 17
+    5.2 We which value is larger using Math.max and save the larger value inside maxSum
+
+6.  We return maxSum
+
+#   What are we essentially doing here is that we get sum of the first n numbers first.
+    And then instead of recreating the window, we just subtract the first number of the
+    n (three) numbers and add the following number to it.
+
+
+function maxSubarraySum(arr, num) {
+  let maxSum = 0;
+  let tempSum = 0;
+  if (arr.length < num) return null;
+  for (let i = 0; i < num; i++) {
+    maxSum += arr[i];
+  }
+  tempSum = maxSum;
+  for (let i = num; i < arr.length; i++) {
+    tempSum = tempSum - arr[i - num] + arr[i];
+    maxSum = Math.max(maxSum, tempSum);
+  }
+  return maxSum;
+}
+
+maxSubarraySum([2,6,9,2,1,8,5,6,3],3)

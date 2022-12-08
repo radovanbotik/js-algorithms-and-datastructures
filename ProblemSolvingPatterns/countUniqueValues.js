@@ -21,6 +21,7 @@
 //  set value of arr[i] to whatever is stored in arr[j]
 
 function countUniqueValues(arr) {
+  if (arr.length === 0) return 0;
   let i = 0;
   let j = 1;
   for (j; j < arr.length; j++) {
@@ -64,5 +65,5 @@ const arr = [-2, -2, -1, -1, 0, 1];
 //arr[i] !== arr[j], we increase i so arr[i] index is 3 and value is 1
 //array looks like this [-2,1,0,1]
 
-//we need to return final position of i + 1 which represents j
+//i is at index of 3 however that means the length of array is 4
 //so we have 4 unique values in this array
