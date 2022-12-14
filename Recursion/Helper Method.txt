@@ -1,0 +1,47 @@
+                    Helper method recursion pattern
+
+1.  Useful if we want to compile array or list of data
+2.  
+
+1.  If we didnt nest the helper function and we made our outter function
+    a recursive function we would reset our result each time;
+    function collectOddvalues(arr){
+        let result = [];
+    }
+2.  We can avoid that by placing the result outside of the recursive function
+    and thats why its better/ cleaner to create a helper function so the 
+    variable is not scoped globally.
+
+function collectOddValues(arr) {
+  let result = [];
+
+  function helper(helperInput) {
+    if (helperInput.length === 0) {
+      return;
+    }
+
+    if (helperInput[0] % 2 !== 0) {
+      result.push(helperInput[0]);
+    }
+
+    helper(helperInput.slice(1));
+  }
+
+  helper(arr);
+
+  return result;
+}
+
+console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+1.  We invoke outter function with an array and create a variable inside its body to 
+    hold our results
+2.  We create recursive function and we invoke it with the array of numbers
+    that was passed to outter function
+3.  Inside recursive function we create base case:
+    if the input(array) length equals to 0 return; stop executing
+4.  We also create condition to seperate odd and even numbers where we check if
+    the first number of the array leaves a remainder.
+    If the number passes the condition push it into the result array
+5.  Recursive function then calls itself with modified value,
+    helperInput.slice(1) and keeps doing it until the array is empty

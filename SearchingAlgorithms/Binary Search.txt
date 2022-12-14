@@ -1,0 +1,38 @@
+                            Binary Search
+
+1.  Is much faster form of Search
+2.  Rather than eliminating one element at a time, you can eliminate
+    half of the remaining elements at a time
+3.  Binary search only works on SORTED arrays!
+4.  The idea behind this is DIVIDE AND CONQUER
+5.  We pick a pivot point in the middle usually and we check the left side
+    and the right side and see in which half will our item be located in.
+    [1,2,4,5,7,11,12,13,15,27,33,34,56] and we search for 13
+    left                          right
+    we can pick 11 to start with and check wheter 13 is greater or lesser than 12
+    [12,13,15,27,33,32,56]
+    left               right
+    now we can do the same again we pick 27 and check if the 13 is less or greater than 27
+    [12,13,15]
+    left    right
+    and again
+
+
+1.  We set up 2 variables:
+        1.1 left for the start of the array
+        1.2 right for the end of the array
+2.  We define a middle from indices:
+        2.1 let middle = Math.floor((left+right)/2)
+3.  We loop through array, while middle is different from value
+    AND left is smaller or equal to right
+4.  We check whether the value we are looking for is smaller than end of the
+    array(window)
+        4.1 If it is we set the end point of the array(right) to the middle -1
+            to create new window
+        4.2 If it is not we set the start point of the array(left) to the middle +1
+            to create new window
+5.  Then we need to recalculate the middle again with new values.
+6.  Outside the loop we check if the arr[middle] is equal to the value we want
+    if it is we return it, otherwise we return -1
+
+### It is crucial to set the final condition and also the circuiting && in the loop

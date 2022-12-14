@@ -1,0 +1,61 @@
+                                Recursion
+
+1.  A process (a function) that calls itself.
+
+#Usages:
+    1.  JSON.parse/JSON.stringify
+    2.  document.getElementByID and DOM traversal
+    3.  Object traversal
+    4.  More complex data structures like binary trees
+
+#The Call Stack:
+
+The Call Stack is a stack data structure
+
+Anytime a function is invoked it is placed pushed on top of the call stack
+
+When Javascript sees the RETURN keyword or when the function ends,
+the compiler will remove(pop).
+It removes things from the TOP(pop, uppermost). 
+
+You can think of it as of stack of papers on top of the desk.
+If you add you add on top and when you remove papers you also remove them from top.
+
+In allmost all programming languages, there are  built in data structures
+that manages what happens when functions are invoked.
+
+#Recursive functions keep pushing the same function onto the call stack again and again.
+
+#Ex:
+
+function takeShower(){
+    return "Showering!"
+}
+
+function eatBreakfast(){
+    let meal = cookFood()
+    return `Eating ${meal}`
+}
+
+function cookFood(){
+    let items = ["Oatmeal", "Eggs", "Protein Shake"]
+    return items[Math.floor(Math.random()*items.length)];
+}
+function wakeUp() {
+    takeShower()
+    eatBreakfast()
+    console.log("Ok ready to go to work!")
+}
+
+wakeUp()
+
+1.wakeUp is invoked
+2.takeShower is inside wakeUp and is invoked, it is placed on top of stack
+3.once takeShower returns it is removed from the top of the stack and
+4.eatBreakfast is invoked and placed on top of stack
+    4.1 however in order to return from eatBreakfast we need to invoke
+        cookFood() first. cookFood is invoker and is placed on top of all stack.
+        Once we return from cookFood, cookFood is popped from the stack
+        and we can continue executing eatBreakfast.
+5.eatBreakfast is done executing and returns eating meal. It gets popped from the stack.
+6.console.log(ready to go to work)

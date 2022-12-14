@@ -1,0 +1,6 @@
+                                Common Problems
+1.  No Base Case / Wrong Base Case:
+2.  No Return / Wrong Return
+    2.1 Forgetting to change the function input inside its own body.
+    2.2 Forgetting to return in the Base Case
+3.  Maximum call stack exceeded === stack overflow === Infinite loop

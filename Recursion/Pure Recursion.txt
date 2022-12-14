@@ -1,0 +1,54 @@
+                                Pure Recursion
+newArr will be empty each function call however we will concatonate all the
+arrays at the end / final call.
+
+1.  We get array of numbers
+2.  We check for length of the array
+3.  We check if is the first number of the array odd or even
+    if its odd we push it into newArr newArray = [1]
+4.  Then we assign newArr to be the current value . contact the result of  
+    the recursive call sliced by 1
+    [1].concat(collectOddValues([2,3,4,5]))
+        [].concat(collectOddValues([3,4,5]))
+            [3].concat(collectOddValues([4,5]))
+                [].concat(collectOddValues([5]))
+                    [5].concat(collectOddValues([]))
+                        if arr.length === 0 return newArr which is []
+                        then we concatonate going up because the previous 
+                        recursive call was waiting for this result.
+                        [].concat[5]
+                        [5].concat[]
+                        [5].concat[3]
+                        [3,5].contact[]
+                        [3,5].contact[1]
+                        [1,3,5]
+
+
+
+
+
+
+
+function collectOddValues(arr) {
+  let newArr = [];
+
+  if (arr.length === 0) {
+    return newArr;
+  }
+
+  if (arr[0] % 2 !== 0) {
+    newArr.push(arr[0]);
+  }
+
+  newArr = newArr.concat(collectOddValues(arr.slice(1)));
+  return newArr;
+}
+
+collectOddValues([1, 2, 3, 4, 5]);
+
+#Tips:
+1.  when using arrays you can use methods like slice,spread operator or concat
+    to make copies and prevent mutation
+2.  strings are immutable so you need to use methods like slice,substring to
+    make copies of strings
+3.  to make copies of object we can use Object.assign or the spread operator

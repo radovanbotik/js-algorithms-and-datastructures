@@ -1,0 +1,21 @@
+                         Writing Factorial Recursively
+
+#Ex: 4!
+
+const factorial = num => {
+  if (num === 1) {
+    return num;
+  }
+  return factorial(num - 1) * num;
+};
+
+console.log(factorial(4));
+
+4! = 4*3*2*1
+
+1.  We want to multiply current number by number below it so what we want is
+    num * function(num-1)
+    We want to call the function again and automatically get the number
+    that is 1 below the current number
+    However we need a base case otherwise we will get stuck in infinite loop,
+    if num===1 we wnt to return num;
