@@ -1,0 +1,14 @@
+                            Naive string search
+1.  The main idea is to lookahaed
+2.  We set up counter, outter and inner loop
+    2.1 First iteration of j
+    str1[0+0] !== str2[0]
+    str1[0+1] !== str2[1]
+    str1[0+2] !== str2[2]
+    2.2 If the characters dont match we break out of inner loop and increase
+        the value of outter loop
+    2.3 If they match we check whether the value of j in its last iteration is
+        the value of last character of the second string
+        if 4 === 4
+        If it does we increase our count by 1
+3.  We return our count

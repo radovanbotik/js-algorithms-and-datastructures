@@ -1,0 +1,29 @@
+                                Bubble Sort
+
+It is a sorting algorithm where the largest values bubble up to the top
+
+1.  We set up inner and outter loop
+2.  Inside inner loop we check if previous value for current iteration of j
+    is larger than value of j in the next iteration.
+    If it is we swap the values.
+    
+    if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+
+Optimization:
+
+1.  We are basicly checking if we made any swaps the last we looped through array 
+2.  We make a variable no swaps and if its true that means there are no swaps
+    and we are going to break out of the loop.
+3.  In the outter loop we set noSwap to true however in the inner loop
+    if we make swap we can set it to false
+4.  We are reducing the number of total iterations.
+
+#Big O:
+
+1.Time complexity is generally O(n²)
+If the data is nearly sorted it might be more efficient however the worst
+case scenario is O(n²)

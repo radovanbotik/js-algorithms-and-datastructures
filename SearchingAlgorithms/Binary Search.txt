@@ -36,3 +36,9 @@
     if it is we return it, otherwise we return -1
 
 ### It is crucial to set the final condition and also the circuiting && in the loop
+
+
+#Big O:
+1.Best Case is BigO(1)
+2.Average Case is BigO(log n)
+3.Worst Case is BigO(log n)
