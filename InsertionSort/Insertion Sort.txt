@@ -1,0 +1,19 @@
+                            Insertion Sort
+
+1.  Builds up the sort by gradually creating a larger left portion
+    which is aways sorted
+    We are taking an element and inserting it in the correct spot
+    [3,38,5,47,41]
+    [3,38,5,47,41]
+    [3,5,38,47,41]
+    [3,5,38,47,41]
+    [3,5,38,41,47]
+
+1.  Start by picking the second element in the array
+2.  Now compare the second element with the one before it and swap if necessary
+3.  Continue to the next element and if it is in the incorrect order,
+    iterate through the sorted potion(left side) to place the element in the correct place
+4.  Repeat until sorted and return arr
+
+#Time complexity: 
+1.the worst case is quadratic O(n²)
