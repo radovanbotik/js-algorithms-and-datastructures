@@ -1,0 +1,22 @@
+                                    Merge Sort
+It is combination of splitting mergin and sorting
+It is exploits the fact that arrays of 0 or 1 elements are always sorted
+    -   Empty array or array of number is always sorted. [],[9] it is sorted.
+It works by decomposing an array into smaller arrays of 0 or 1 elements,
+then building up a newly sorted array.
+                            [8,3,5,4,7,6,1,2]
+                        split in 2 we get 2 arrays
+                        [8,3,5,4]           [7,6,1,2]
+                    they are still too big so we split again
+                    [8,3]   [5,4]          [7,6]    [1,2]
+                            still not small enough
+                  [8]  [3]  [5]  [4]      [7]   [6]  [1]  [2]
+        Now we merge them together because now each array is sorted
+        We compare neighboring arrays, and merge them in the order
+                    [3,8]   [4,5]           [6,7]   [1,2]
+        Now that each array is sorted we we will merge it width
+        neigboring array again. We will compare inputs and merge them
+        in the order
+                        [3,4,5,8]          [1,2,6,7]
+                        And we repeat the process again
+                                [1,2,3,4,5,6,7,8]
