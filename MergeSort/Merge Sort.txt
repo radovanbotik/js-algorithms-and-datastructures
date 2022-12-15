@@ -20,3 +20,33 @@ then building up a newly sorted array.
                         [3,4,5,8]          [1,2,6,7]
                         And we repeat the process again
                                 [1,2,3,4,5,6,7,8]
+
+1.  In order to implement merge sort, its useful to first implement a function
+    responsible for merging two SORTED arrays
+2.  Given two arrays which are SORTED this helper function should create
+    a new array which is also sorted and consists of all the elements from
+    the inputs
+3.  This function should run in O(n+m) time and O(n+m) space and SHOULD not modify
+    the paramters passed to it.
+
+Steps:
+1.  Create an empty array that you return in the end.
+    take a look at the smallest values in each input array.
+    Set up 2 counters that start at 0. i=0;j=0;
+2.  While there are still values we havent look at, meaning that
+    i,j havent hit the end of their respective arrays we gonna take the
+    value of the first item in the first array and compare it to the first value in the
+    second array.
+    
+    If the value in the first array is smaller than value in the second array,
+    push the value in the first array into array we created and move onto next value
+    in the first array
+
+    If the value in the first array is larger than value in the second array,
+    push the value in the second array into array we created and move onto next value
+    in the second array
+
+    Once we exhaust once array, push in all remaining values from the other array
+    into new array.
+    
+    HOWEVER THE INPUT ARRAYS MUST BE SORTED!!
