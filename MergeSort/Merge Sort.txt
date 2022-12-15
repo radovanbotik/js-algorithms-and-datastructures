@@ -29,7 +29,7 @@ then building up a newly sorted array.
 3.  This function should run in O(n+m) time and O(n+m) space and SHOULD not modify
     the paramters passed to it.
 
-Steps:
+Merge Arrays:
 1.  Create an empty array that you return in the end.
     take a look at the smallest values in each input array.
     Set up 2 counters that start at 0. i=0;j=0;
@@ -50,3 +50,11 @@ Steps:
     into new array.
     
     HOWEVER THE INPUT ARRAYS MUST BE SORTED!!
+
+Steps:
+1.  Break up the array into halves until you have arrays that are 
+    empty or have one element.
+    you can use slice method and recursion to achieve it
+2.  Once you have smaller sorted arrays merge those arrays with other arrays
+    until you are back at the full length of the array. 
+3.  Once the array has been merged back together return the merged and sorted array.
