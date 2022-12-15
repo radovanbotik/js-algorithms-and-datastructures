@@ -58,3 +58,11 @@ Steps:
 2.  Once you have smaller sorted arrays merge those arrays with other arrays
     until you are back at the full length of the array. 
 3.  Once the array has been merged back together return the merged and sorted array.
+
+Time Complexity:
+1.  Best scenario is O(n log n)
+2.  Average is O(n log n)
+3.  Worst is O(n log n)
+
+Space Complexity:
+1.  O(n) 
