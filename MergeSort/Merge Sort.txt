@@ -64,5 +64,10 @@ Time Complexity:
 2.  Average is O(n log n)
 3.  Worst is O(n log n)
 
+O(log n) is the number of decompositions
+O(n log n)is the number of decompositions and comparisons per decomposition
+
 Space Complexity:
 1.  O(n) 
+
+It is the best DATA AGNOSTIC sorting pattern.
